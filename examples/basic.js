@@ -21,7 +21,7 @@ const client = new TokenlayOpenAI({
   tokenlayKey: process.env.TOKENLAY_KEY,     // Get free key at https://tokenlay.com
   providerApiKey: process.env.OPENAI_API_KEY, // Your OpenAI API key
   // Optional: point to local proxy for development
-  // tokenlayBaseUrl: 'http://localhost:3000',
+  tokenlayBaseUrl: 'http://localhost:3000',
 });
 
 /**
