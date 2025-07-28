@@ -27,7 +27,10 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
     "lint:fix": "eslint src tests --fix",
-    "prepublishOnly": "npm run build && npm run test && npm run typecheck"
+    "prepublishOnly": "npm run build && npm run test && npm run typecheck",
+    "prerelease": "npm run lint && npm test && npm run build",
+    "release": "npm publish",
+    "postrelease": "git push --tags"
   },
   "keywords": [
     "ai",
@@ -50,8 +53,16 @@
   "bugs": {
     "url": "https://github.com/tokenlay/tokenlay-sdk-js/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "openai": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "openai": {
+      "optional": false
+    }
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

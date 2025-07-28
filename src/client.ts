@@ -186,7 +186,6 @@ export class TokenlayOpenAI {
     } catch (error) {
       return { 
         status: 'error', 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         message: error instanceof Error ? error.message : 'Unknown error' 
       };
     }
